@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Iaroslav Plaksin
+      changes:
+        - createTable:
+            tableName: timetable
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: time
+                  type: varchar(36)
+                  constraints:
+                    nullable: false

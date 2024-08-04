@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: Assignment
+#  profiles:
+#    active: test
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    url: jdbc:postgresql://postgres:5432/timetable
+    password: mysecretpassword
+    user: postgres
+
+time-service:
+  default-page-number: 0
+  default-page-size: 10
+
+
+server:
+  port: 8080
+
+connection:
+  username: ${SECRET_USERNAME:postgres}
+  password: ${SECRET_PASSWORD:mysecretpassword}
+  url: jdbc:postgresql://localhost:5432/timetable
+kafka:
+  consumer:
+    group-id: foo-group
+    auto-offset-reset: earliest
+    fetch-min-bytes: 512
+    fetch-max-wait-ms: 3000
+    max-poll-interval-ms: 300000
+    max-poll-records: 100
+    bootstrap-servers: localhost:9093
+    topic: assignment
+  producer:
+    bootstrap-servers: localhost:9093
+    batch-size: 16384
+    buffer-memory: 33554432
+    linger-ms: 5000

@@ -1,0 +1,8 @@
+connection:
+    username: test
+    password: test
+    url: jdbc:postgresql://postgres:5432/timetable
+
+spring:
+  liquibase:
+    change-log: ../../test/resources/changelog-master-test.yaml

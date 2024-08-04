@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - includeAll:
+#      path: "classpath:db/changelog/08-2024"
+      path: "src/main/resources/db/changelog/08-2024"
