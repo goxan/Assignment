@@ -20,7 +20,7 @@ server:
 connection:
   username: ${SECRET_USERNAME:postgres}
   password: ${SECRET_PASSWORD:mysecretpassword}
-  url: jdbc:postgresql://localhost:5432/timetable
+  url: jdbc:postgresql://postgres:5432/timetable
 kafka:
   consumer:
     group-id: foo-group
@@ -29,10 +29,10 @@ kafka:
     fetch-max-wait-ms: 3000
     max-poll-interval-ms: 300000
     max-poll-records: 100
-    bootstrap-servers: localhost:9093
+    bootstrap-servers: kafka:9093
     topic: assignment
   producer:
-    bootstrap-servers: localhost:9093
+    bootstrap-servers: kafka:9093
     batch-size: 16384
     buffer-memory: 33554432
     linger-ms: 5000
